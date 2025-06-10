@@ -9,10 +9,9 @@ public class dicom4che {
     public static void main(String[] args) {
         String dicomFilePath = "D:\\dicomreader\\content1545.dcm";  
 
-        try (DicomInputStream dis = new DicomInputStream(new File(dicomFilePath))) {
-            Attributes attrs = dis.readDataset(-1, -1);
+        try (DicomInputStream obj= new DicomInputStream(new File(dicomFilePath))) {
+            Attributes attrs = obj.readDataset(-1, -1);
 
-            // Print common tags
             System.out.println("Patient Name: " + attrs.getString(Tag.PatientName));
             System.out.println("Patient ID: " + attrs.getString(Tag.PatientID));
             System.out.println("Patient Birth Date: " + attrs.getString(Tag.PatientBirthDate));

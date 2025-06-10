@@ -10,7 +10,8 @@ public class dicomreader {
     public static void main(String[] args) {
         String dicomFile = "D:\\dicomreader\\dicom.dcm";
         try {
-            readDicomFile(dicomFile); 
+            readDicomFile(dicomFile);
+            
             System.out.println("Study Instance UID : " + tag(TagFromName.StudyInstanceUID));
             System.out.println("Series Instance UID : " + tag(TagFromName.SeriesInstanceUID));
             System.out.println("SOP Instance UID : " + tag(TagFromName.SOPInstanceUID));
@@ -28,11 +29,9 @@ public class dicomreader {
             e.printStackTrace();
         }
     }
-
     public static void readDicomFile(String dicomFilePath) throws Exception {
         list.read(dicomFilePath);
     }
-
     public static String tag(AttributeTag attrTag) {
         return Attribute.getDelimitedStringValuesOrEmptyString(list, attrTag);
     }

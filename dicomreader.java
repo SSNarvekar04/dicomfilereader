@@ -13,25 +13,25 @@ public class dicomreader {
             loadDicomFile(dicomFile);
 
 
-           System.out.println("Study Instance UID : " + getTagInformation(TagFromName.StudyInstanceUID));
-           System.out.println("Series Instance UID : " + getTagInformation(TagFromName.SeriesInstanceUID));
-           System.out.println("SOP Instance UID : " + getTagInformation(TagFromName.SOPInstanceUID));
+           System.out.println("Study Instance UID : " + tag(TagFromName.StudyInstanceUID));
+           System.out.println("Series Instance UID : " + tag(TagFromName.SeriesInstanceUID));
+           System.out.println("SOP Instance UID : " +tag(TagFromName.SOPInstanceUID));
             
-           System.out.println("Patient Name : " + getTagInformation(TagFromName.PatientName));
-           System.out.println("Patient ID : " + getTagInformation(TagFromName.PatientID));
-           System.out.println("Patient Birth Date : " + getTagInformation(TagFromName.PatientBirthDate));
-           System.out.println("Patient Sex : " + getTagInformation(TagFromName.PatientSex));
+           System.out.println("Patient Name : " + tag(TagFromName.PatientName));
+           System.out.println("Patient ID : " +tag(TagFromName.PatientID));
+           System.out.println("Patient Birth Date : " + tag(TagFromName.PatientBirthDate));
+           System.out.println("Patient Sex : " + tag(TagFromName.PatientSex));
             
-           System.out.println("Modality : " + getTagInformation(TagFromName.Modality));
-           System.out.println("Study Date : " + getTagInformation(TagFromName.StudyDate));
-           System.out.println("Study Time : " + getTagInformation(TagFromName.StudyTime));
+           System.out.println("Modality : " +tag(TagFromName.Modality));
+           System.out.println("Study Date : " + tag(TagFromName.StudyDate));
+           System.out.println("Study Time : " + tagn(TagFromName.StudyTime));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void loadDicomFile(String dicomFilePath) throws Exception {
+    public static void readDicomFile(String dicomFilePath) throws Exception {
         list.read(dicomFilePath);
     }
 

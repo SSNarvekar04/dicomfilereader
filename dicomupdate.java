@@ -30,12 +30,10 @@ public class dicomupdate {
             attrs = obj.readDataset(-1, -1);
             meta = obj.readFileMetaInformation();
         }
-
-        // Modify DICOM fields
+        
         attrs.setString(Tag.PatientID, VR.LO, "101012345");
         attrs.setString(Tag.PatientName, VR.PN, "XYZ");
 
-        // Create file meta information if not available
         if (meta == null) {
             meta = attrs.createFileMetaInformation(UID.ImplicitVRLittleEndian);
         }

@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-public class dicomupdate {
+public class dicomupdate1 {
 
     public static void main(String[] args) {
         String dicomFilePath = "D:\\dicomreader\\1.2.40.0.13.1.183722267609197533024418606316316477527.dcm";  
